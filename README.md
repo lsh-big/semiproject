@@ -2,7 +2,7 @@
 
 [![GitHub Pages 배포](https://github.com/lsh-big/semiproject/actions/workflows/github-pages.yml/badge.svg)](https://github.com/lsh-big/semiproject/actions/workflows/github-pages.yml)
 
-> **[ONFIT 웹사이트 바로가기](https://lsh-big.github.io/semiproject/)** · [AI 패션 검색](https://lsh-big.github.io/semiproject/ai-fashion/)
+> **[ONFIT 프로젝트 소개 페이지](https://lsh-big.github.io/semiproject/)** · [ONFIT 체험하기](https://lsh-big.github.io/semiproject/app/) · [AI 패션 검색](https://lsh-big.github.io/semiproject/app/ai-fashion/)
 
 ## About
 
@@ -102,11 +102,12 @@ npm run build:site --prefix frontend
 
 | 플랫폼 | 주소 |
 | --- | --- |
-| GitHub Pages | [ONFIT 페이지 열기](https://lsh-big.github.io/semiproject/) |
-| AI 패션 검색 | [AI 패션 검색 열기](https://lsh-big.github.io/semiproject/ai-fashion/) |
+| GitHub Pages 프로젝트 소개 | [ONFIT 제작 과정과 화면 소개](https://lsh-big.github.io/semiproject/) |
+| ONFIT 체험 | [ONFIT 앱 열기](https://lsh-big.github.io/semiproject/app/) |
+| AI 패션 검색 | [AI 패션 검색 열기](https://lsh-big.github.io/semiproject/app/ai-fashion/) |
 | Netlify | [ONFIT 페이지 열기](https://onfit3.netlify.app/) |
 
-- GitHub Pages는 `main` 브랜치에 변경 사항을 푸시하면 GitHub Actions가 두 프론트엔드를 빌드해 자동 배포합니다. 저장소 **Settings → Pages → Build and deployment**에서 **GitHub Actions**를 선택해야 최초 배포가 시작됩니다.
+- GitHub Pages는 `main` 브랜치에 변경 사항을 푸시하면 GitHub Actions가 프로젝트 소개 페이지와 두 프론트엔드를 빌드해 자동 배포합니다. 저장소 **Settings → Pages → Build and deployment**에서 **GitHub Actions**를 선택해야 최초 배포가 시작됩니다.
 - Pages는 정적 웹 호스팅이므로 로그인, 데이터베이스, 상품 API 등 백엔드 연결이 필요한 기능은 별도 API 배포와 `VITE_API_BASE_URL` 설정이 있어야 동작합니다.
 - **정적 웹 서비스** — 프론트엔드와 AI 패션 화면을 빌드해 배포합니다.
 - **웹 서비스** — FastAPI를 실행하고 `/health` 경로로 상태를 확인합니다.

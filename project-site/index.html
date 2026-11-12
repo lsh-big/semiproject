@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f1ec" />
+    <meta name="description" content="ONFIT 프로젝트 소개 — 개인 맞춤 코디, 가격 인사이트, 3D 가상 피팅을 만드는 과정과 화면을 소개합니다." />
+    <meta property="og:title" content="ONFIT — Find your own fit" />
+    <meta property="og:description" content="취향을 발견하고, 코디를 만들고, 더 나은 핏을 찾는 패션 큐레이션 프로젝트." />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <title>ONFIT — 프로젝트 소개</title>
+    <style>
+      :root{font-family:Pretendard,"DM Sans",sans-serif;color:#302c2a;background:#f8f6f2;font-synthesis:none;text-rendering:optimizeLegibility;--ink:#302c2a;--muted:#77716b;--line:#e6e0d8;--paper:#f8f6f2;--cream:#eee8df;--clay:#ad7764;--olive:#75806a;--serif:"Playfair Display",Georgia,serif}
+      *{box-sizing:border-box}
+      html{scroll-behavior:smooth;scroll-padding-top:82px}
+      body{margin:0;min-width:320px}
+      a{color:inherit;text-decoration:none}
+      button,a{-webkit-tap-highlight-color:transparent}
+      .wrap{width:min(1160px,calc(100% - 48px));margin-inline:auto}
+      .topbar{height:74px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:#f8f6f2eF;position:sticky;top:0;z-index:5;backdrop-filter:blur(14px);padding:0 max(24px,calc((100vw - 1160px)/2))}
+      .brand{display:flex;align-items:center;gap:11px;font-size:13px;font-weight:700;letter-spacing:.13em}
+      .brand-mark{width:32px;height:32px;border:1px solid #b98c75;border-radius:50%;display:grid;place-items:center;color:#8e624f;font:20px var(--serif)}
+      .brand small{display:block;color:#8a8178;font-size:8px;letter-spacing:.2em;margin-top:3px}
+      .nav{display:flex;align-items:center;gap:27px;font-size:12px;color:#625c56}
+      .nav a:hover,.text-link:hover{color:var(--clay)}
+      .nav .nav-cta{padding:11px 16px;border:1px solid #3c3733;color:#3c3733}
+      .hero{position:relative;min-height:630px;display:grid;grid-template-columns:1fr .9fr;align-items:center;gap:6%;padding-block:70px 82px}
+      .hero-copy{position:relative;z-index:1}
+      .eyebrow{font-size:10px;font-weight:700;letter-spacing:.19em;text-transform:uppercase;color:#8e7768}
+      .eyebrow i{display:inline-block;width:25px;height:1px;background:#a77b65;vertical-align:middle;margin-right:9px}
+      h1,h2,h3,p{margin-top:0}
+      .hero h1{font-size:clamp(50px,7vw,88px);line-height:1.04;letter-spacing:-.065em;font-weight:500;margin:24px 0}
+      .hero h1 em,.section-title em{font-family:var(--serif);font-weight:500;color:#98705f;letter-spacing:-.045em}
+      .hero-intro{font-size:16px;line-height:1.9;color:#6b655e;max-width:470px}
+      .hero-actions{display:flex;align-items:center;gap:21px;margin-top:34px}
+      .button{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 20px;font-size:12px;font-weight:600;transition:transform .2s,background .2s}
+      .button:hover{transform:translateY(-2px)}
+      .button-dark{background:#35312e;color:#fff}
+      .button-line{border:1px solid #b9b0a7}
+      .hero-note{margin-top:43px;color:#958c82;font-size:10px;letter-spacing:.08em}
+      .hero-visual{height:475px;position:relative}
+      .hero-visual img{width:100%;height:100%;object-fit:cover;object-position:center 36%;filter:saturate(.75)}
+      .hero-visual:before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid #c9b8a7;z-index:-1}
+      .hero-stamp{position:absolute;right:-29px;bottom:32px;width:124px;height:124px;border-radius:50%;background:#e8dfd3;color:#554b43;display:grid;place-content:center;text-align:center;line-height:1.1;transform:rotate(9deg)}
+      .hero-stamp strong{font:24px var(--serif)}
+      .hero-stamp small{font-size:8px;letter-spacing:.2em;margin-bottom:7px}
+      .project-meta{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--line);padding:24px 0}
+      .project-meta div{padding:0 20px;border-right:1px solid var(--line)}
+      .project-meta div:first-child{padding-left:0}
+      .project-meta div:last-child{border:0}
+      .project-meta span,.project-meta strong{display:block}
+      .project-meta span{font-size:9px;letter-spacing:.13em;color:#938a81;margin-bottom:8px}
+      .project-meta strong{font-size:13px;font-weight:600}
+      section.content-section{padding:105px 0}
+      .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:40px}
+      .section-title{font-size:clamp(34px,4.7vw,56px);letter-spacing:-.06em;line-height:1.13;font-weight:500;margin:15px 0 0}
+      .section-summary{max-width:390px;color:var(--muted);font-size:13px;line-height:1.85;margin:0}
+      .intro-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:start}
+      .intro-copy{font-size:15px;line-height:2;color:#615b55}
+      .intro-copy strong{color:#393430}
+      .insight-box{background:#eee9e1;padding:30px 32px}
+      .insight-box h3{font-size:17px;font-weight:600;margin-bottom:12px}
+      .insight-box p{color:#6e665e;font-size:12px;line-height:1.85;margin:0}
+      .feature-section{background:#eee9e1}
+      .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#ddd5cb;border:1px solid #ddd5cb}
+      .feature-card{background:#f5f2ed;padding:29px;min-height:242px}
+      .feature-card .num{font:22px var(--serif);color:#ab816c}
+      .feature-card h3{font-size:18px;margin:20px 0 10px}
+      .feature-card p{font-size:12px;line-height:1.8;color:#706961;min-height:64px;margin-bottom:18px}
+      .feature-card small{display:inline-block;font-size:10px;letter-spacing:.04em;color:#8c7364;background:#ece4dc;padding:7px 9px}
+      .screens-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+      .screen-card{display:grid;grid-template-columns:160px 1fr;border:1px solid var(--line);background:#fbfaf7;min-height:193px;transition:box-shadow .2s,transform .2s}
+      .screen-card:hover{transform:translateY(-3px);box-shadow:0 14px 36px #43372b12}
+      .screen-image{min-height:100%;overflow:hidden;background:#e8e1d8}
+      .screen-image img{width:100%;height:100%;min-height:193px;object-fit:cover}
+      .screen-copy{padding:22px}
+      .screen-copy .route{font:10px "DM Sans",sans-serif;color:#9a7969;letter-spacing:.05em}
+      .screen-copy h3{font-size:16px;margin:9px 0}
+      .screen-copy p{font-size:11px;color:#746d66;line-height:1.75;margin:0}
+      .screen-copy a{display:inline-block;margin-top:12px;font-size:10px;border-bottom:1px solid #cbb8a9;padding-bottom:3px}
+      .method-section{background:#383430;color:#f7f3ed}
+      .method-section .eyebrow{color:#c3a58f}
+      .method-section .section-title em{color:#d5b39a}
+      .method-section .section-summary{color:#c5bdb4}
+      .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid #71675f}
+      .step{padding:25px 22px 10px 0;position:relative}
+      .step:not(:last-child):after{content:"";position:absolute;right:18px;top:-4px;width:7px;height:7px;border-radius:50%;background:#c59b7e}
+      .step span{font:12px "DM Sans",sans-serif;color:#c59b7e;letter-spacing:.12em}
+      .step h3{font-size:15px;margin:16px 0 9px}
+      .step p{font-size:11px;line-height:1.8;color:#c5bdb4;margin:0}
+      .architecture{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+      .arch-card{border:1px solid var(--line);padding:25px;background:#fbfaf7}
+      .arch-card h3{font-size:15px;margin:13px 0}
+      .arch-card p{font-size:11px;line-height:1.8;color:#726b64;margin:0 0 15px}
+      .arch-card code{display:block;white-space:normal;overflow-wrap:anywhere;font-size:10px;line-height:1.8;color:#725c4f;background:#f0ebe4;padding:10px}
+      .stack{background:#eae5dd}
+      .stack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+      .stack-item{padding:19px;background:#f8f6f2}
+      .stack-item small{font-size:9px;letter-spacing:.15em;color:#958679}
+      .stack-item strong{display:block;font-size:14px;margin:9px 0 5px}
+      .stack-item p{font-size:10px;line-height:1.65;color:#746d65;margin:0}
+      .contribution{display:grid;grid-template-columns:.75fr 1.25fr;gap:60px;align-items:center;border-top:1px solid var(--line);padding-top:40px}
+      .contribution h3{font-size:22px;font-weight:500}
+      .contribution p{font-size:12px;line-height:1.9;color:#6f6861;margin:0}
+      .notice{border-left:2px solid #b48770;background:#efe9e1;padding:18px 21px;font-size:11px;color:#696159;line-height:1.8;margin-top:34px}
+      .final-cta{background:#ded3c6;text-align:center;padding:85px 24px}
+      .final-cta h2{font-size:clamp(35px,5vw,58px);letter-spacing:-.06em;font-weight:500;line-height:1.15;margin:15px 0}
+      .final-cta h2 em{font:500 1em var(--serif);color:#8f6857}
+      .final-cta p{color:#6d6258;font-size:13px;margin-bottom:28px}
+      .final-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+      footer{padding:27px 24px;text-align:center;color:#91877d;font-size:10px;letter-spacing:.04em}
+      @media(max-width:850px){.nav{gap:14px}.nav a:not(.nav-cta){display:none}.hero{min-height:auto;grid-template-columns:1fr  .8fr;gap:30px;padding-block:62px}.hero-visual{height:390px}.hero-stamp{right:0}.feature-grid{grid-template-columns:repeat(2,1fr)}.screen-card{grid-template-columns:120px 1fr}.steps{grid-template-columns:repeat(2,1fr);row-gap:28px}.stack-grid{grid-template-columns:repeat(2,1fr)}}
+      @media(max-width:600px){.wrap{width:min(100% - 36px,460px)}.topbar{height:64px;padding-inline:18px}.nav{gap:0}.nav .nav-cta{padding:10px 12px;font-size:10px}.hero{grid-template-columns:1fr;padding-block:52px 44px}.hero h1{font-size:58px}.hero-intro{font-size:14px}.hero-visual{height:350px;margin-right:14px}.hero-stamp{width:96px;height:96px;right:0}.hero-stamp strong{font-size:19px}.project-meta{grid-template-columns:repeat(2,1fr);row-gap:19px;padding-block:20px}.project-meta div:nth-child(2){border:0}.project-meta div:nth-child(3){padding-left:0}.project-meta strong{font-size:11px}section.content-section{padding:72px 0}.section-head{display:block;margin-bottom:29px}.section-summary{margin-top:17px}.intro-grid,.contribution{grid-template-columns:1fr;gap:24px}.feature-grid,.screens-grid,.architecture{grid-template-columns:1fr}.feature-card{min-height:0}.feature-card p{min-height:0}.screen-card{grid-template-columns:112px 1fr;min-height:180px}.screen-image img{min-height:180px}.screen-copy{padding:17px}.screen-copy p{font-size:10px}.steps{grid-template-columns:1fr 1fr;column-gap:15px}.step{padding-right:7px}.step:not(:last-child):after{display:none}.stack-grid{grid-template-columns:1fr 1fr;gap:8px}.stack-item{padding:14px}.final-cta{padding:67px 20px}}
+      @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="ONFIT 프로젝트 소개 홈"><span class="brand-mark">O</span><span>ONFIT<small>FIND YOUR OWN FIT</small></span></a>
+      <nav class="nav" aria-label="프로젝트 소개 메뉴">
+        <a href="#about">프로젝트</a><a href="#screens">페이지 안내</a><a href="#process">제작 방식</a><a href="#stack">기술 스택</a>
+        <a class="nav-cta" href="app/">서비스 체험 ↗</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero wrap">
+        <div class="hero-copy">
+          <p class="eyebrow"><i></i>PERSONAL FASHION CURATION · 2026</p>
+          <h1>취향을 입고,<br /><em>나답게 빛나다.</em></h1>
+          <p class="hero-intro">ONFIT은 나의 스타일을 발견하는 데서 시작해 코디, 옷장, 가격 정보와 가상 피팅까지 이어 주는 패션 큐레이션 프로젝트입니다. 이 페이지에서 각 화면이 어떤 역할을 하고 어떻게 만들어졌는지 살펴볼 수 있습니다.</p>
+          <div class="hero-actions"><a class="button button-dark" href="app/">ONFIT 직접 둘러보기 <span>↗</span></a><a class="button button-line" href="#screens">페이지 구성 보기 ↓</a></div>
+          <p class="hero-note">PROJECT CASE STUDY · TEAM PROJECT · WEB SERVICE</p>
+        </div>
+        <div class="hero-visual">
+          <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=85" alt="개인 스타일 큐레이션을 보여주는 패션 에디토리얼 이미지" fetchpriority="high" />
+          <div class="hero-stamp"><small>ONFIT · EDITION 01</small><strong>Own<br />your fit.</strong></div>
+        </div>
+      </section>
+
+      <section class="project-meta wrap" aria-label="프로젝트 요약">
+        <div><span>PROJECT</span><strong>AI 패션 큐레이션</strong></div>
+        <div><span>EXPERIENCE</span><strong>탐색 · 추천 · 피팅</strong></div>
+        <div><span>FRONTEND</span><strong>React · Vite</strong></div>
+        <div><span>BACKEND</span><strong>FastAPI · Python</strong></div>
+      </section>
+
+      <section class="content-section wrap" id="about">
+        <div class="section-head">
+          <div><p class="eyebrow">01 / PROJECT OVERVIEW</p><h2 class="section-title">옷을 고르는 순간을<br /><em>나를 이해하는 경험으로.</em></h2></div>
+          <p class="section-summary">취향을 입력하고, 나에게 맞는 코디를 발견하고, 마음에 든 아이템을 저장하는 흐름을 하나의 서비스 안에 설계했습니다.</p>
+        </div>
+        <div class="intro-grid">
+          <div class="intro-copy">
+            <p>온라인에서 옷을 살 때는 마음에 드는 스타일을 찾는 일과 실제로 나에게 어울릴지 판단하는 일이 따로 떨어져 있습니다. ONFIT은 이 과정을 <strong>스타일 프로필 → 코디 탐색 → 아이템 저장 → 핏 확인</strong>의 사용자 여정으로 연결합니다.</p>
+            <p>메인 화면은 패션 에디토리얼의 분위기를 살리고, 각 기능 화면은 같은 색상과 타이포그래피 체계 안에서 이어지도록 구성했습니다. 데스크톱뿐 아니라 작은 화면에서도 주요 탐색과 사진 선택을 사용할 수 있도록 반응형 UI를 적용했습니다.</p>
+          </div>
+          <aside class="insight-box"><h3>이 소개 페이지에서 볼 수 있는 것</h3><p>ONFIT의 화면별 목적, 각 화면에서 사용자가 할 수 있는 일, 기능을 연결한 프론트엔드·API 구현 흐름, 기술 스택과 현재 데모 데이터의 범위를 한곳에 정리했습니다. 실제 서비스는 별도 체험 링크에서 열 수 있습니다.</p></aside>
+        </div>
+      </section>
+
+      <section class="content-section feature-section" id="features">
+        <div class="wrap">
+          <div class="section-head">
+            <div><p class="eyebrow">02 / WHAT ONFIT DOES</p><h2 class="section-title">발견부터 착용까지,<br /><em>아홉 가지 경험.</em></h2></div>
+            <p class="section-summary">각 기능은 별도 화면으로 나뉘지만 공통 내비게이션과 재사용 UI 컴포넌트로 한 서비스처럼 연결됩니다.</p>
+          </div>
+          <div class="feature-grid">
+            <article class="feature-card"><span class="num">01</span><h3>스타일 프로필</h3><p>선호 스타일, 자주 입는 색, 원하는 핏을 선택해 취향의 기준을 만듭니다.</p><small>FORM STATE · PROFILE API</small></article>
+            <article class="feature-card"><span class="num">02</span><h3>코디 추천</h3><p>룩 카드와 스타일 칩으로 추천 코디를 살펴보고 취향 설정으로 돌아갈 수 있습니다.</p><small>REUSABLE LOOK CARDS</small></article>
+            <article class="feature-card"><span class="num">03</span><h3>시즌 룩북</h3><p>연령대와 성별을 선택해 계절별 코디를 탐색하고, 구성 아이템과 상품 정보를 확인합니다.</p><small>FILTER · CATALOG · FAVORITES</small></article>
+            <article class="feature-card"><span class="num">04</span><h3>디지털 옷장</h3><p>추천 아이템과 저장해 둔 코디를 한 화면에서 보고 관심 항목을 정리합니다.</p><small>FILTER · SAVED ITEMS</small></article>
+            <article class="feature-card"><span class="num">05</span><h3>가격 비교</h3><p>상품 카드와 판매처별 가격 표를 이용해 샘플 상품의 가격 구성을 비교합니다.</p><small>OFFER LIST · DEMO DATA</small></article>
+            <article class="feature-card"><span class="num">06</span><h3>가격 인사이트</h3><p>찜한 상품의 저장 가격과 관측 시점을 차트로 보여주도록 구성했습니다.</p><small>PRICE CHART · HISTORY READY</small></article>
+            <article class="feature-card"><span class="num">07</span><h3>3D 가상 피팅</h3><p>체형 치수를 입력하고 3D 아바타에 의류 모델을 조합해 실루엣을 확인합니다.</p><small>THREE.JS · GLB · R3F</small></article>
+            <article class="feature-card"><span class="num">08</span><h3>이미지 기반 AI 검색</h3><p>사진 속 원하는 아이템을 표시해 유사 상품을 찾고 가상 착용을 이어갑니다.</p><small>IMAGE UPLOAD · AI API</small></article>
+            <article class="feature-card"><span class="num">09</span><h3>계정과 관리자 데모</h3><p>로그인 후 프로필·저장 항목을 이용하며, 관리자 데모는 가입 현황 API를 조회합니다.</p><small>AUTH · FASTAPI</small></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section wrap" id="screens">
+        <div class="section-head">
+          <div><p class="eyebrow">03 / SCREEN BY SCREEN</p><h2 class="section-title">페이지를 누르면<br /><em>직접 체험할 수 있어요.</em></h2></div>
+          <p class="section-summary">카드를 선택하면 ONFIT 앱의 해당 화면으로 이동합니다. 일부 화면은 샘플 콘텐츠를 사용하며, 서버 연동이 필요한 동작은 백엔드 배포 설정에 따라 달라집니다.</p>
+        </div>
+        <div class="screens-grid">
+          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1635360433659-3d56acc9fbb6?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/home</span><h3>홈 · 에디토리얼</h3><p>서비스 메시지와 주요 기능을 패션 이미지, 큐레이션 카드, 추천 상품으로 소개하는 시작 화면입니다.</p><a href="app/#/home">홈 화면 보기 ↗</a></div></article>
+          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/style</span><h3>스타일 프로필</h3><p>스타일·색상·핏을 선택하는 폼입니다. 로그인 상태에 따라 프로필 조회와 저장 API를 호출합니다.</p><a href="app/#/style">프로필 화면 보기 ↗</a></div></article>
+          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/outfits</span><h3>개인 맞춤 코디</h3><p>룩 카드와 스타일 필터를 제공합니다. 현재 화면에는 시연용 코디 콘텐츠가 포함되어 있습니다.</p><a href="app/#/outfits">코디 화면 보기 ↗</a></div></article>
+          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/seasonal</span><h3>시즌 코디</h3><p>연령·성별 필터로 룩북을 좁히고 상품 카탈로그, 상세 미리보기, 찜 기능을 이용합니다.</p><a href="app/#/seasonal">시즌 코디 보기 ↗</a></div></article>
+          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/wardrobe</span><h3>나의 디지털 옷장</h3><p>카테고리별 아이템 필터와 저장한 시즌 아이템을 관리하는 화면입니다.</p><a href="app/#/wardrobe">옷장 화면 보기 ↗</a></div></article>
+          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/compare</span><h3>상품 가격 비교</h3><p>하나의 상품과 여러 판매처의 가격·배송 정보를 비교하는 표 형식 화면입니다. 값은 샘플입니다.</p><a href="app/#/compare">비교 화면 보기 ↗</a></div></article>
+          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/price</span><h3>가격 인사이트</h3><p>찜한 상품을 고르고 저장 가격, 날짜, 기록 개수를 차트와 요약 카드로 확인합니다.</p><a href="app/#/price">가격 화면 보기 ↗</a></div></article>
+          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/fitting</span><h3>3D 가상 피팅</h3><p>치수·체형 프리셋을 조정하고 아바타에 상의, 하의, 아우터, 모자를 조합합니다.</p><a href="app/#/fitting">3D 피팅 보기 ↗</a></div></article>
+          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP /ai-fashion/</span><h3>AI 패션 검색</h3><p>사진 업로드·카메라, 아이템 선택, 유사 상품 추천과 가상 착용 순서로 진행합니다.</p><a href="app/ai-fashion/">AI 검색 화면 보기 ↗</a></div></article>
+          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/admin</span><h3>관리자 데모</h3><p>공개 데모용 가입 현황을 API에서 불러오고, 제한된 가입자 목록과 통계를 표시합니다.</p><a href="app/#/admin">관리자 데모 보기 ↗</a></div></article>
+        </div>
+      </section>
+
+      <section class="content-section method-section" id="process">
+        <div class="wrap">
+          <div class="section-head">
+            <div><p class="eyebrow">04 / HOW IT WAS BUILT</p><h2 class="section-title">화면을 기능으로,<br /><em>기능을 흐름으로.</em></h2></div>
+            <p class="section-summary">UI를 작은 컴포넌트로 나누고, 데이터가 필요한 지점은 서비스 함수와 API로 연결했습니다.</p>
+          </div>
+          <div class="steps">
+            <article class="step"><span>STEP 01</span><h3>사용자 여정 설계</h3><p>프로필 설정에서 코디 탐색, 아이템 저장, 피팅까지 이어지는 주요 이동 경로를 화면 단위로 정리합니다.</p></article>
+            <article class="step"><span>STEP 02</span><h3>재사용 가능한 UI</h3><p>Header, ProductCard, LookCard, StyleChips와 같은 공통 요소를 분리해 페이지 간 동작과 스타일을 맞춥니다.</p></article>
+            <article class="step"><span>STEP 03</span><h3>상태와 API 연결</h3><p>React state/effect로 입력·로딩·오류·완료 상태를 관리하고, 서비스 모듈에서 FastAPI에 JSON 또는 이미지 FormData를 전송합니다.</p></article>
+            <article class="step"><span>STEP 04</span><h3>반응형·배포</h3><p>Vite로 정적 파일을 빌드하고 GitHub Actions가 Pages용 산출물을 업로드합니다. 소개 페이지와 앱은 서로 다른 경로로 배포됩니다.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">05 / IMPLEMENTATION NOTES</p><h2 class="section-title">어떤 방식으로<br /><em>구현했나요?</em></h2></div>
+          <p class="section-summary">페이지의 모양뿐 아니라 경로 구조, 요청 데이터, 컴포넌트 책임을 기준으로 구현을 나눴습니다.</p>
+        </div>
+        <div class="architecture">
+          <article class="arch-card"><span class="eyebrow">01 · ROUTING</span><h3>Hash 기반 화면 전환</h3><p>메인 앱은 URL hash를 읽어 화면 컴포넌트를 선택합니다. 서버의 별도 라우팅 설정 없이 정적 호스팅에서 각 앱 화면으로 이동할 수 있습니다.</p><code>frontend/src/App.jsx<br />#/style · #/outfits · #/fitting</code></article>
+          <article class="arch-card"><span class="eyebrow">02 · SERVICE LAYER</span><h3>UI와 네트워크 분리</h3><p>프로필·인증·찜·이미지 검색 요청을 서비스 모듈에 분리했습니다. 화면은 로딩과 실패 상태를 처리하고, API 응답 형태는 각 서비스 함수가 확인합니다.</p><code>frontend/src/services/<br />ai-fashion/src/services/api.js</code></article>
+          <article class="arch-card"><span class="eyebrow">03 · AI SEARCH</span><h3>이미지 검색 파이프라인</h3><p>선택 영역의 좌표를 segmentation API에 보내고, crop 이미지로 유사 상품을 요청한 뒤 상품 사진과 사용자 이미지를 가상 착용 API에 전달합니다.</p><code>POST /api/circle-search/segment<br />POST /api/circle-search/recommend<br />POST /api/circle-search/try-on</code></article>
+          <article class="arch-card"><span class="eyebrow">04 · 3D FITTING</span><h3>치수와 의류 모델 조합</h3><p>React Three Fiber 캔버스에 GLB 아바타·의류를 렌더링하고, 사용자가 조정한 신체 치수와 의류 색상·착용 상태를 화면 상태로 반영합니다.</p><code>MannequinCanvas<br />BodyModel · GarmentGlb · InbodyUploadPanel</code></article>
+          <article class="arch-card"><span class="eyebrow">05 · BACKEND</span><h3>FastAPI와 데이터 저장</h3><p>FastAPI 라우터가 인증, 프로필, 상품, 가격 및 이미지 검색 요청을 처리합니다. 설정에 따라 MySQL 호환 TiDB 데이터베이스를 사용합니다.</p><code>backend/app/api/<br />backend/routers/circle_search.py</code></article>
+          <article class="arch-card"><span class="eyebrow">06 · DEPLOYMENT</span><h3>소개와 앱을 나눠 배포</h3><p>GitHub Actions가 정적 소개 페이지를 루트에, ONFIT과 AI 검색 앱을 하위 경로에 빌드합니다. API는 별도 백엔드 서비스로 배포해야 합니다.</p><code>/semiproject/ · 프로젝트 소개<br />/semiproject/app/ · ONFIT 앱</code></article>
+        </div>
+      </section>
+
+      <section class="content-section stack" id="stack">
+        <div class="wrap">
+          <div class="section-head">
+            <div><p class="eyebrow">06 / TECH STACK</p><h2 class="section-title">화면부터 배포까지,<br /><em>사용한 기술.</em></h2></div>
+            <p class="section-summary">이미 구성된 저장소와 빌드 파이프라인을 기준으로 각 기술이 맡은 역할을 요약했습니다.</p>
+          </div>
+          <div class="stack-grid">
+            <article class="stack-item"><small>FRONTEND</small><strong>React · Vite</strong><p>페이지 컴포넌트, 인터랙션, 개발 및 프로덕션 빌드</p></article>
+            <article class="stack-item"><small>STYLE</small><strong>Tailwind CSS · CSS</strong><p>공통 유틸리티와 기능별 반응형 UI</p></article>
+            <article class="stack-item"><small>3D GRAPHICS</small><strong>Three.js · React Three Fiber</strong><p>아바타와 의류 모델을 브라우저에서 렌더링</p></article>
+            <article class="stack-item"><small>API</small><strong>Python · FastAPI</strong><p>인증·프로필·상품·검색 요청 처리</p></article>
+            <article class="stack-item"><small>DATA</small><strong>SQLAlchemy · TiDB</strong><p>관계형 데이터 모델과 MySQL 호환 저장소</p></article>
+            <article class="stack-item"><small>IMAGE SEARCH</small><strong>Canvas · FormData</strong><p>선택 영역을 crop하고 이미지 데이터를 API로 전송</p></article>
+            <article class="stack-item"><small>HOSTING</small><strong>GitHub Pages</strong><p>정적 프로젝트 소개와 프론트엔드 산출물 공개</p></article>
+            <article class="stack-item"><small>AUTOMATION</small><strong>GitHub Actions</strong><p>main 변경 시 빌드·Pages 배포를 자동화</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">07 / TEAM CONTRIBUTION</p><h2 class="section-title">역할을 나누고<br /><em>하나의 서비스로 연결.</em></h2></div>
+          <p class="section-summary">저장소에 기록된 팀 담당 영역입니다. 각 담당 기능은 공통 UI와 API 흐름 안에서 통합됩니다.</p>
+        </div>
+        <div class="contribution">
+          <h3>프로젝트 기여 영역</h3>
+          <p><strong>이승호</strong> — 가격 이력, 구매 타이밍 분석, 가격 수집 자동화<br /><strong>성승건</strong> — 회원·프로필, 개인 맞춤 코디, 인바디, 3D 피팅 및 관련 프론트엔드·백엔드<br /><strong>황상옥</strong> — 공통 프론트엔드와 UI<br /><strong>안종범</strong> — 상품 크롤링, 동일 상품 매칭, 가격 비교</p>
+        </div>
+        <p class="notice"><strong>데모 범위 안내</strong> · GitHub Pages는 정적 호스팅이라 API 서버나 데이터베이스를 자체 실행하지 않습니다. 현재 코디·가격 일부는 시연용 데이터이며, 로그인·프로필 저장·이미지 AI 검색 등 서버 연동 기능은 별도 백엔드 배포와 API 주소 설정이 필요합니다. 가격 타이밍 화면은 기록이 충분히 쌓이기 전까지 구매 적기 분석을 제공하지 않습니다.</p>
+      </section>
+
+      <section class="final-cta">
+        <p class="eyebrow">FIND YOUR OWN FIT</p>
+        <h2>프로젝트를 살펴봤다면,<br /><em>ONFIT을 직접 만나보세요.</em></h2>
+        <p>소개 페이지는 프로젝트 설명, 체험 링크는 실제 ONFIT 프론트엔드로 연결됩니다.</p>
+        <div class="final-actions"><a class="button button-dark" href="app/">ONFIT 앱 열기 ↗</a><a class="button button-line" href="app/ai-fashion/">AI 패션 검색 ↗</a><a class="button button-line" href="https://github.com/lsh-big/semiproject">GitHub 저장소 ↗</a></div>
+      </section>
+    </main>
+    <footer>ONFIT · PERSONAL FASHION CURATION · PROJECT DOCUMENTATION</footer>
+  </body>
+</html>
