@@ -3,6 +3,7 @@ import { captureCameraFrame, centerZoomCrop, prepareUploadedImage } from './Came
 import CircleSelector from './CircleSelector.jsx'
 import MobileTryOn from './MobileTryOn.jsx'
 import LandingPage from './LandingPage.jsx'
+import { onfitHomeUrl } from '../siteLinks.js'
 import './MobileCamera.css'
 
 function cameraError(error) {
@@ -562,7 +563,7 @@ export default function MobileCamera({ image, selection, result, analyzing, anal
     {mode === 'start' ? <LandingPage onCamera={startCamera}
       onUpload={() => pickerRef.current?.click()} busy={busy} error={error} /> : <>
       <header className={`mobile-top-overlay${mode === 'camera' ? ' mobile-camera-header' : ''}${mode === 'photo' && lastTryOn?.result?.image_data_url ? ' has-tryon-return' : ''}`}>
-        <a className="mobile-onfit-return" href="/#/home" aria-label="ONFIT 쇼핑몰로 돌아가기">← ONFIT</a>
+        <a className="mobile-onfit-return" href={onfitHomeUrl} aria-label="ONFIT 쇼핑몰로 돌아가기">← ONFIT</a>
         <h1><strong>Onfit</strong><span> Virtual Try-On</span></h1>
         {mode === 'photo' && lastTryOn?.result?.image_data_url && <button type="button"
           className="mobile-tryon-reopen" onClick={reopenLastTryOn}

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { onfitHomeUrl } from '../siteLinks.js'
 
 export default function MobileTryOn({ product, searchImage, personImage, result, loading, error,
   photoError, photoLoading, onUploadPerson, onRestorePerson, onGenerate, onBack }) {
@@ -74,7 +75,7 @@ export default function MobileTryOn({ product, searchImage, personImage, result,
       </div>
     </div>
     <header className="mobile-tryon-header">
-      <a className="mobile-onfit-return" href="/#/home" aria-label="ONFIT 쇼핑몰로 돌아가기">← ONFIT</a>
+      <a className="mobile-onfit-return" href={onfitHomeUrl} aria-label="ONFIT 쇼핑몰로 돌아가기">← ONFIT</a>
       <button type="button" onClick={onBack} aria-label="추천 상품으로 돌아가기">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
           strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

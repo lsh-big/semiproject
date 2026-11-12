@@ -34,7 +34,7 @@ export default function AuthModal({ mode, onClose, onAuthenticated }) {
     <div className="modal-backdrop" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
       <section className="auth-modal" role="dialog" aria-modal="true" aria-labelledby="auth-title">
         <button type="button" className="modal-close" onClick={() => onClose()} aria-label="닫기"><Icon name="X" /></button>
-        <img className="auth-logo" src="/onfit-mark.svg" alt="ONFIT" />
+        <img className="auth-logo" src={`${import.meta.env.BASE_URL}onfit-mark.svg`} alt="ONFIT" />
         <p className="eyebrow">WELCOME TO ONFIT</p>
         <h2 id="auth-title">{signup ? '나만의 핏을 시작해요' : '다시 만나 반가워요'}</h2>
         <p className="auth-copy">취향에 꼭 맞는 아이템과 코디를 발견해 보세요.</p>

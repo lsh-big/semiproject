@@ -8,6 +8,7 @@ import { downloadTryOnImage } from './components/PcTryOnPanel.jsx'
 import BeforeAfterSlider from './components/BeforeAfterSlider.jsx'
 import { sendRecommendations, sendSelection, sendTryOn } from './services/api.js'
 import { createSearchImageCrop } from './services/searchCrop.js'
+import { onfitHomeUrl } from './siteLinks.js'
 import './App.css'
 
 const similarityLabels = {
@@ -607,7 +608,7 @@ export default function App() {
   return (
     <main className="studio-shell">
       <header className="studio-header">
-        <a className="studio-home-link" href="/#/home">← ONFIT 쇼핑몰</a>
+        <a className="studio-home-link" href={onfitHomeUrl}>← ONFIT 쇼핑몰</a>
         <div className="studio-title"><span>ONFIT AI FASHION SEARCH</span>
           <h1>{image ? '나만의 가상 피팅 스튜디오' : 'AI 패션 검색 스튜디오'}</h1></div>
         <span className="studio-header-note">사진에서 찾고, 나에게 입혀보세요</span>
