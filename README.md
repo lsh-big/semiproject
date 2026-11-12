@@ -1,41 +1,102 @@
 # ONFIT
 
-[![GitHub Pages 배포](https://github.com/lsh-big/semiproject/actions/workflows/github-pages.yml/badge.svg)](https://github.com/lsh-big/semiproject/actions/workflows/github-pages.yml)
+### 나에게 맞는 스타일을 찾고, 코디부터 가격 정보와 가상 피팅까지 이어 주는 패션 큐레이션 서비스
 
-> **[ONFIT 프로젝트 소개 페이지](https://lsh-big.github.io/semiproject/)** · [ONFIT 체험하기](https://lsh-big.github.io/semiproject/app/) · [AI 패션 검색](https://lsh-big.github.io/semiproject/app/ai-fashion/)
+ONFIT은 체형과 스타일 취향을 바탕으로 패션을 탐색하고, 코디와 아이템을 관리하며, 더 나은 구매 결정을 돕도록 만든 팀 프로젝트입니다. 아래 포트폴리오에서 화면과 제작 방식을 먼저 확인하고, 실제 서비스와 소스 코드도 둘러볼 수 있습니다.
 
-## About
+<p align="center">
+  <a href="https://lsh-big.github.io/semiproject/project-site/"><strong>프로젝트 포트폴리오 보기 ↗</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://onfit3.netlify.app/"><strong>ONFIT 서비스 체험 ↗</strong></a>
+  &nbsp;·&nbsp;
+  <a href="https://github.com/lsh-big/semiproject"><strong>소스 코드 ↗</strong></a>
+</p>
 
-ONFIT은 체형과 스타일 취향을 바탕으로 코디를 추천하고, 디지털 옷장·상품 가격 인사이트·3D 가상 피팅을 제공하는 AI 패션 큐레이션 서비스입니다. 사진에서 원하는 아이템을 찾는 AI 패션 검색 화면도 함께 제공합니다.
+<p align="center">
+  <a href="https://github.com/lsh-big/semiproject/actions/workflows/github-pages.yml"><img src="https://github.com/lsh-big/semiproject/actions/workflows/github-pages.yml/badge.svg" alt="GitHub Pages 배포 상태" /></a>
+</p>
 
-**GitHub 저장소 소개 문구:** AI 기반 개인 맞춤 코디 추천, 디지털 옷장, 가격 인사이트와 3D 가상 피팅을 제공하는 패션 큐레이션 웹 서비스.
+---
 
-## 서비스 소개
+## 프로젝트 포트폴리오
 
-ONFIT은 사용자의 스타일 프로필과 체형 정보를 바탕으로 패션 탐색과 구매 결정을 돕는 웹 서비스입니다. 코디 추천, 디지털 옷장, 상품 가격 비교, 가격 흐름 분석, 3D 가상 피팅과 이미지 기반 AI 패션 검색 기능을 제공합니다.
+**먼저 볼 곳:** [ONFIT 화면·제작 포트폴리오](https://lsh-big.github.io/semiproject/project-site/)
 
-## 주요 기능
+페이지별 화면과 사용자 흐름, 주요 UI 구성, API·데이터 연결 방식, 기술 선택을 별도 웹사이트에 정리했습니다. 화면 설명을 읽은 뒤 링크를 눌러 ONFIT 앱도 확인할 수 있습니다.
 
-- **스타일 프로필** — 취향과 체형 정보를 입력해 개인화 추천의 기반을 설정합니다.
-- **코디 추천** — 상황과 계절에 맞는 코디를 탐색하고 저장합니다.
-- **디지털 옷장** — 보유 의류를 관리하고 코디에 활용합니다.
-- **가격 비교와 분석** — 상품별 판매 가격을 비교하고 가격 흐름과 구매 시점을 확인합니다.
-- **3D 가상 피팅** — 체형 정보를 반영한 아바타와 의류 모델을 확인합니다.
-- **AI 패션 검색** — 이미지에서 관심 영역을 선택해 유사한 패션 상품을 찾습니다.
-- **계정 관리** — 회원가입과 로그인을 통해 프로필과 저장 정보를 관리합니다.
+| 포트폴리오 항목 | 살펴볼 내용 |
+| --- | --- |
+| [전체 화면과 제작 과정](https://lsh-big.github.io/semiproject/project-site/) | 서비스 소개, 주요 기능, 화면 안내, 아키텍처와 배포 방식 |
+| [화면별 포트폴리오](https://lsh-big.github.io/semiproject/project-site/#screens) | 홈, 스타일 프로필, 코디, 옷장, 가격, 피팅 화면과 각 화면의 목적 |
+| [구현 방식과 기술 구성](https://lsh-big.github.io/semiproject/project-site/#process) | 사용자 흐름 설계, 공통 UI, API 연결, 이미지 검색 파이프라인 |
+| [ONFIT 앱](https://onfit3.netlify.app/) | 공개된 프론트엔드 데모 |
+| [AI 패션 검색 구현 설명](https://lsh-big.github.io/semiproject/project-site/#ai-search) | 이미지 선택부터 segmentation·유사 상품·가상 착용 요청까지 |
 
-상품과 가격 데이터는 데이터베이스 및 외부 연동 설정에 따라 달라질 수 있습니다. 실제 판매처 데이터가 연결되지 않은 환경에서는 일부 화면에 예시 데이터가 표시될 수 있습니다.
+### 화면에서 확인할 수 있는 기능
 
-## 기술 스택
-
-| 구분 | 기술 | 역할 |
+| 화면 | 사용자 경험 | 데모 |
 | --- | --- | --- |
-| 웹 프론트엔드 | React, Vite, Tailwind CSS | ONFIT 화면과 사용자 상호작용 |
-| AI 패션 화면 | React, Vite | 이미지 선택 및 패션 검색 화면 |
-| 백엔드 API | Python, FastAPI, SQLAlchemy | 인증, 스타일 추천, 피팅, 상품 및 가격 정보 제공 |
-| 데이터베이스 | TiDB Cloud, MySQL 호환 드라이버 | 계정과 서비스 데이터 저장 |
-| 3D 그래픽 | Three.js, React Three Fiber | 아바타 및 의류 가상 피팅 |
-| 배포 | Render | 정적 웹사이트, API 서버, 가격 갱신 작업 |
+| 홈·에디토리얼 | 서비스 소개와 주요 패션 콘텐츠 탐색 | [홈 열기](https://onfit3.netlify.app/#/home) |
+| 스타일 프로필 | 스타일·색상·핏 선호 설정 | [스타일 설정 열기](https://onfit3.netlify.app/#/style) |
+| 코디·시즌 룩북 | 추천 룩 탐색과 시즌별 필터 | [코디 열기](https://onfit3.netlify.app/#/outfits) · [시즌 룩북 열기](https://onfit3.netlify.app/#/seasonal) |
+| 디지털 옷장 | 저장한 아이템과 코디 확인 | [옷장 열기](https://onfit3.netlify.app/#/wardrobe) |
+| 가격 비교·인사이트 | 상품별 가격 비교 및 가격 이력 확인 | [가격 비교 열기](https://onfit3.netlify.app/#/compare) · [가격 인사이트 열기](https://onfit3.netlify.app/#/price) |
+| 3D 가상 피팅 | 체형 치수와 의류 조합을 아바타로 미리보기 | [피팅 화면 열기](https://onfit3.netlify.app/#/fitting) |
+| 이미지 기반 AI 패션 검색 | 이미지에서 아이템을 선택해 유사 상품을 찾는 흐름 | [구현 설명](https://lsh-big.github.io/semiproject/project-site/#ai-search) |
+
+> 데모의 로그인·저장·가격 데이터·이미지 검색은 백엔드와 외부 연동 설정에 따라 동작 범위가 다를 수 있습니다. 일부 화면은 샘플 데이터를 사용하고, 3D 피팅 모델은 배포된 에셋 구성에 영향을 받습니다.
+
+---
+
+## 한눈에 보는 프로젝트
+
+| 구분 | 내용 |
+| --- | --- |
+| 프로젝트 | ONFIT — 퍼스널 패션 큐레이션 웹 서비스 |
+| 목적 | 스타일 탐색, 코디 관리, 가격 비교, 가상 피팅 경험을 하나의 서비스 흐름으로 연결 |
+| 구성 | React 웹 프론트엔드, FastAPI 백엔드, 별도 AI 패션 검색 화면 |
+| 데이터 | SQLAlchemy 기반 관계형 데이터 모델, MySQL 호환 TiDB 연동 |
+| 배포 | GitHub Actions·Pages 정적 소개/프론트엔드 배포, Render 백엔드 구성 |
+
+## 주요 사용자 흐름
+
+```text
+취향·체형 설정
+      ↓
+코디와 시즌 룩 탐색
+      ↓
+아이템 저장 · 디지털 옷장
+      ↓
+가격 비교 · 가격 흐름 확인
+      ↓
+3D 가상 피팅
+```
+
+이미지 기반 AI 검색은 별도 화면에서 사진 입력 → 관심 영역 선택 → 유사 상품 검색 → 가상 착용 요청 순서로 구성했습니다.
+
+## 개인 기여
+
+팀 프로젝트에서 **가격 이력과 구매 타이밍 분석, 가격 데이터 수집 자동화**를 담당했습니다. 가격 데이터를 서비스 화면과 연결하고, 사용자가 상품의 가격 흐름을 확인할 수 있도록 분석·표시 기능을 구현했습니다.
+
+## 기술 구성
+
+| 영역 | 기술 | 담당 역할 |
+| --- | --- | --- |
+| 웹 프론트엔드 | React, Vite, Tailwind CSS | 서비스 화면, 사용자 입력과 인터랙션 |
+| 3D 그래픽 | Three.js, React Three Fiber | 브라우저 기반 아바타·의류 모델 렌더링 |
+| 백엔드 API | Python, FastAPI, Pydantic | 인증, 프로필, 상품·가격 및 피팅 API |
+| 데이터 계층 | SQLAlchemy, Alembic, TiDB/MySQL | 데이터 모델, 저장 및 마이그레이션 |
+| 이미지 검색 화면 | React, Canvas, FormData | 이미지 입력·영역 선택 및 검색 API 요청 |
+| 배포 자동화 | GitHub Actions, GitHub Pages, Render | 정적 사이트 배포 및 백엔드 서비스 구성 |
+
+## 구현 포인트
+
+- **페이지 구성:** URL hash 경로로 주요 ONFIT 화면을 전환해 정적 호스팅에서도 화면별 링크를 사용할 수 있게 했습니다.
+- **기능 분리:** 재사용 가능한 UI 요소와 서비스/API 모듈을 나눠 화면 표현과 네트워크 요청의 책임을 분리했습니다.
+- **데이터 상태:** 비동기 요청의 로딩·오류·완료 상태를 UI 흐름에 반영하고, 로그인 기반 기능은 세션 상태와 연결했습니다.
+- **이미지 검색:** 선택한 이미지 영역을 segmentation 요청에 전달하고, crop 이미지로 유사 상품 및 가상 착용 요청을 이어가도록 구성했습니다.
+- **반응형 UI:** 데스크톱과 모바일에서 화면 탐색과 주요 입력을 사용할 수 있도록 레이아웃을 구성했습니다.
+- **자동 배포:** `main` 브랜치 변경 시 GitHub Actions가 GitHub Pages용 정적 산출물을 빌드·배포합니다.
 
 ## 로컬 실행
 
@@ -43,22 +104,7 @@ ONFIT은 사용자의 스타일 프로필과 체형 정보를 바탕으로 패�
 
 - Node.js와 npm
 - Python 3.11 이상
-- TiDB Cloud 데이터베이스와 접속 정보 (데이터베이스 연동 기능을 사용하는 경우)
-
-### 환경 변수 설정
-
-저장소 루트의 `.env.example`을 참고해 `.env`를 설정합니다. 기존 `.env` 파일이 있으면 보존하고 필요한 항목만 수정하세요.
-
-```dotenv
-TIDB_HOST=
-TIDB_PORT=4000
-TIDB_USERNAME=
-TIDB_PASSWORD=
-TIDB_DATABASE=
-SECRET_KEY=
-```
-
-`DATABASE_URL`을 사용하는 경우에는 다섯 개의 `TIDB_*` 항목 대신 연결 문자열을 설정할 수 있습니다. `SECRET_KEY`에는 충분히 긴 임의의 값을 사용하세요. 데이터베이스 연결이 필요하지 않은 화면 개발은 TiDB 항목을 비워둔 채 진행할 수 있습니다.
+- 백엔드 데이터 연동이 필요한 경우 TiDB/MySQL 접속 정보
 
 ### 설치 및 시작 (Windows PowerShell)
 
@@ -77,74 +123,41 @@ if (-not (Test-Path .env)) {
 .\Start-ONFIT.ps1
 ```
 
-시작 스크립트는 ONFIT 프론트엔드, FastAPI 백엔드, AI 패션 화면을 로컬에서 실행합니다. 스크립트가 실행 중인 터미널을 닫으면 스크립트가 시작한 서버도 종료됩니다.
+로컬 환경 변수는 `.env.example`을 참고해 설정하세요. 비밀번호, API 키 등 비밀 값은 저장소에 커밋하지 마세요.
 
-| 화면 | 주소 |
+| 서비스 | 로컬 주소 |
 | --- | --- |
 | ONFIT | [http://127.0.0.1:5173/](http://127.0.0.1:5173/) |
 | 3D 피팅 | [http://127.0.0.1:5173/#/fitting](http://127.0.0.1:5173/#/fitting) |
-| AI 패션 검색 | [http://127.0.0.1:5173/ai-fashion/](http://127.0.0.1:5173/ai-fashion/) |
-| AI 패션 화면 직접 접속 | [http://127.0.0.1:5174/ai-fashion/](http://127.0.0.1:5174/ai-fashion/) |
+| AI 패션 화면 | [http://127.0.0.1:5174/ai-fashion/](http://127.0.0.1:5174/ai-fashion/) |
 | API 문서 | [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) |
-| API 상태 확인 | [http://127.0.0.1:8000/health](http://127.0.0.1:8000/health) |
 
-개별 프론트엔드 개발 서버는 각 프로젝트 폴더에서 `npm run dev`로 실행합니다. 프론트엔드 배포용 빌드는 `npm run build --prefix frontend`, 통합 사이트 배포 파일은 다음 명령으로 생성합니다.
-
-```powershell
-npm run build:site --prefix frontend
-```
-
-## 배포
-
-저장소의 [`render.yaml`](./render.yaml)에 Render 서비스 구성이 있습니다.
-
-### 배포 페이지
-
-| 플랫폼 | 주소 |
-| --- | --- |
-| GitHub Pages 프로젝트 소개 | [ONFIT 제작 과정과 화면 소개](https://lsh-big.github.io/semiproject/) |
-| ONFIT 체험 | [ONFIT 앱 열기](https://lsh-big.github.io/semiproject/app/) |
-| AI 패션 검색 | [AI 패션 검색 열기](https://lsh-big.github.io/semiproject/app/ai-fashion/) |
-| Netlify | [ONFIT 페이지 열기](https://onfit3.netlify.app/) |
-
-- GitHub Pages는 `main` 브랜치에 변경 사항을 푸시하면 GitHub Actions가 프로젝트 소개 페이지와 두 프론트엔드를 빌드해 자동 배포합니다. 저장소 **Settings → Pages → Build and deployment**에서 **GitHub Actions**를 선택해야 최초 배포가 시작됩니다.
-- Pages는 정적 웹 호스팅이므로 로그인, 데이터베이스, 상품 API 등 백엔드 연결이 필요한 기능은 별도 API 배포와 `VITE_API_BASE_URL` 설정이 있어야 동작합니다.
-- **정적 웹 서비스** — 프론트엔드와 AI 패션 화면을 빌드해 배포합니다.
-- **웹 서비스** — FastAPI를 실행하고 `/health` 경로로 상태를 확인합니다.
-- **예약 작업** — 설정된 일정에 따라 가격 갱신 작업을 실행합니다.
-
-Render 대시보드에서 서비스에 맞는 `DATABASE_URL` 또는 TiDB 접속 정보, `FRONTEND_ORIGINS`, 프론트엔드의 `VITE_API_BASE_URL` 등을 설정해야 합니다. 배포 주소는 Render에서 서비스를 생성한 뒤 확인할 수 있습니다.
-
-## 프로젝트 구조
+## 저장소 구조
 
 ```text
-Semiproject/
-├── frontend/                 # 메인 React 웹사이트, 페이지, 3D 피팅
-├── ai-fashion/               # 이미지 기반 AI 패션 검색 화면
-├── backend/
-│   ├── app/api/              # API 라우터
-│   ├── app/features/         # 인증, 스타일링, 피팅, 인바디, 이미지 검색
-│   ├── app/services/         # 추천 및 외부 서비스 연동
-│   └── requirements.txt
-├── assets/                   # 피팅용 모델 및 관련 에셋
-├── database/                 # 데이터베이스 스키마와 시드 자료
-├── docs/                     # 프로젝트 문서
-├── scripts/                  # 빌드 및 개발 스크립트
-├── Start-ONFIT.ps1           # 로컬 통합 실행 스크립트
-└── render.yaml               # Render 배포 구성
+.
+├── project-site/       # ONFIT 웹 포트폴리오
+├── frontend/           # 메인 React 앱과 3D 피팅
+├── ai-fashion/         # 이미지 기반 AI 패션 검색 UI
+├── backend/            # FastAPI API와 서비스
+├── database/           # 데이터베이스 스키마·시드 자료
+├── assets/             # 3D 모델과 서비스 에셋
+├── scripts/            # 통합 빌드 스크립트
+└── .github/workflows/  # GitHub Pages 자동 배포
 ```
 
-## 팀 구성
+## 팀
 
-| 이름 | 담당 업무 |
+| 담당 | 주요 영역 |
 | --- | --- |
-| 성승건 | 회원·프로필, 개인 맞춤 코디, 인바디, 3D 피팅 및 관련 프론트엔드·백엔드 |
-| 황상옥 | 공통 웹 화면 및 사용자 인터페이스 |
-| 안종범 | 상품 크롤링, 동일 상품 매칭, 가격 비교 |
 | 이승호 | 가격 이력, 구매 타이밍 분석, 가격 수집 자동화 |
+| 성승건 | 회원·프로필, 개인 맞춤 코디, 인바디, 3D 피팅 |
+| 황상옥 | 공통 웹 화면과 사용자 인터페이스 |
+| 안종범 | 상품 크롤링, 동일 상품 매칭, 가격 비교 |
 
-## 보안 및 데이터
+## 링크
 
-- `.env`, `backend/.env`, `frontend/.env.local`은 개인 환경 설정용이며 Git 저장소에 올리지 않습니다.
-- `VITE_*` 변수는 브라우저 코드에 포함될 수 있으므로 비밀 키나 데이터베이스 비밀번호를 넣지 마세요.
-- API 키와 배포용 비밀 값은 로컬 환경 변수 또는 Render 환경 변수로 관리하세요.
+- **포트폴리오:** [ONFIT 프로젝트 웹사이트](https://lsh-big.github.io/semiproject/project-site/)
+- **서비스 데모:** [ONFIT 열기](https://onfit3.netlify.app/)
+- **소스 코드:** [GitHub 저장소](https://github.com/lsh-big/semiproject)
+- **배포 상태:** [GitHub Actions](https://github.com/lsh-big/semiproject/actions/workflows/github-pages.yml)
