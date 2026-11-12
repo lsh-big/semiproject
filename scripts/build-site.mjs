@@ -17,6 +17,10 @@ for(const app of ['frontend','ai-fashion']){
   await build({root:dir,...(check?{publicDir:false,build:{write:false}}:
     outDir?{build:{outDir,emptyOutDir:true}}:{})})
 }
-if(pages&&!check)cpSync(path.join(root,'project-site'),output,{recursive:true})
+if(pages&&!check){
+  const projectSite=path.join(root,'project-site')
+  cpSync(projectSite,output,{recursive:true})
+  cpSync(projectSite,path.join(output,'project-site'),{recursive:true})
+}
 console.log(check?'Both frontend code builds passed (no output written).':
   pages?'GitHub Pages site: frontend/dist':'Combined site: frontend/dist')

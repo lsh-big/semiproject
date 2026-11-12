@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <base href="/semiproject/" />
     <meta name="theme-color" content="#f5f1ec" />
     <meta name="description" content="ONFIT 프로젝트 소개 — 개인 맞춤 코디, 가격 인사이트, 3D 가상 피팅을 만드는 과정과 화면을 소개합니다." />
     <meta property="og:title" content="ONFIT — Find your own fit" />
@@ -120,20 +119,20 @@
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="#" aria-label="ONFIT 프로젝트 소개 홈"><span class="brand-mark">O</span><span>ONFIT<small>FIND YOUR OWN FIT</small></span></a>
+      <a class="brand" href="#top" aria-label="ONFIT 프로젝트 소개 홈"><span class="brand-mark">O</span><span>ONFIT<small>FIND YOUR OWN FIT</small></span></a>
       <nav class="nav" aria-label="프로젝트 소개 메뉴">
         <a href="#about">프로젝트</a><a href="#screens">페이지 안내</a><a href="#process">제작 방식</a><a href="#stack">기술 스택</a>
-        <a class="nav-cta" href="app/">서비스 체험 ↗</a>
+        <a class="nav-cta" href="https://onfit3.netlify.app/">서비스 체험 ↗</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero wrap">
+      <section class="hero wrap" id="top">
         <div class="hero-copy">
           <p class="eyebrow"><i></i>PERSONAL FASHION CURATION · 2026</p>
           <h1>취향을 입고,<br /><em>나답게 빛나다.</em></h1>
           <p class="hero-intro">ONFIT은 나의 스타일을 발견하는 데서 시작해 코디, 옷장, 가격 정보와 가상 피팅까지 이어 주는 패션 큐레이션 프로젝트입니다. 이 페이지에서 각 화면이 어떤 역할을 하고 어떻게 만들어졌는지 살펴볼 수 있습니다.</p>
-          <div class="hero-actions"><a class="button button-dark" href="app/">ONFIT 직접 둘러보기 <span>↗</span></a><a class="button button-line" href="#screens">페이지 구성 보기 ↓</a></div>
+          <div class="hero-actions"><a class="button button-dark" href="https://onfit3.netlify.app/">ONFIT 직접 둘러보기 <span>↗</span></a><a class="button button-line" href="#screens">페이지 구성 보기 ↓</a></div>
           <p class="hero-note">PROJECT CASE STUDY · TEAM PROJECT · WEB SERVICE</p>
         </div>
         <div class="hero-visual">
@@ -189,16 +188,16 @@
           <p class="section-summary">카드를 선택하면 ONFIT 앱의 해당 화면으로 이동합니다. 일부 화면은 샘플 콘텐츠를 사용하며, 서버 연동이 필요한 동작은 백엔드 배포 설정에 따라 달라집니다.</p>
         </div>
         <div class="screens-grid">
-          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1635360433659-3d56acc9fbb6?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/home</span><h3>홈 · 에디토리얼</h3><p>서비스 메시지와 주요 기능을 패션 이미지, 큐레이션 카드, 추천 상품으로 소개하는 시작 화면입니다.</p><a href="app/#/home">홈 화면 보기 ↗</a></div></article>
-          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/style</span><h3>스타일 프로필</h3><p>스타일·색상·핏을 선택하는 폼입니다. 로그인 상태에 따라 프로필 조회와 저장 API를 호출합니다.</p><a href="app/#/style">프로필 화면 보기 ↗</a></div></article>
-          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/outfits</span><h3>개인 맞춤 코디</h3><p>룩 카드와 스타일 필터를 제공합니다. 현재 화면에는 시연용 코디 콘텐츠가 포함되어 있습니다.</p><a href="app/#/outfits">코디 화면 보기 ↗</a></div></article>
-          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/seasonal</span><h3>시즌 코디</h3><p>연령·성별 필터로 룩북을 좁히고 상품 카탈로그, 상세 미리보기, 찜 기능을 이용합니다.</p><a href="app/#/seasonal">시즌 코디 보기 ↗</a></div></article>
-          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/wardrobe</span><h3>나의 디지털 옷장</h3><p>카테고리별 아이템 필터와 저장한 시즌 아이템을 관리하는 화면입니다.</p><a href="app/#/wardrobe">옷장 화면 보기 ↗</a></div></article>
-          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/compare</span><h3>상품 가격 비교</h3><p>하나의 상품과 여러 판매처의 가격·배송 정보를 비교하는 표 형식 화면입니다. 값은 샘플입니다.</p><a href="app/#/compare">비교 화면 보기 ↗</a></div></article>
-          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/price</span><h3>가격 인사이트</h3><p>찜한 상품을 고르고 저장 가격, 날짜, 기록 개수를 차트와 요약 카드로 확인합니다.</p><a href="app/#/price">가격 화면 보기 ↗</a></div></article>
-          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/fitting</span><h3>3D 가상 피팅</h3><p>치수·체형 프리셋을 조정하고 아바타에 상의, 하의, 아우터, 모자를 조합합니다.</p><a href="app/#/fitting">3D 피팅 보기 ↗</a></div></article>
-          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP /ai-fashion/</span><h3>AI 패션 검색</h3><p>사진 업로드·카메라, 아이템 선택, 유사 상품 추천과 가상 착용 순서로 진행합니다.</p><a href="app/ai-fashion/">AI 검색 화면 보기 ↗</a></div></article>
-          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/admin</span><h3>관리자 데모</h3><p>공개 데모용 가입 현황을 API에서 불러오고, 제한된 가입자 목록과 통계를 표시합니다.</p><a href="app/#/admin">관리자 데모 보기 ↗</a></div></article>
+          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1635360433659-3d56acc9fbb6?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/home</span><h3>홈 · 에디토리얼</h3><p>서비스 메시지와 주요 기능을 패션 이미지, 큐레이션 카드, 추천 상품으로 소개하는 시작 화면입니다.</p><a href="https://onfit3.netlify.app/#/home">홈 화면 보기 ↗</a></div></article>
+          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/style</span><h3>스타일 프로필</h3><p>스타일·색상·핏을 선택하는 폼입니다. 로그인 상태에 따라 프로필 조회와 저장 API를 호출합니다.</p><a href="https://onfit3.netlify.app/#/style">프로필 화면 보기 ↗</a></div></article>
+          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/outfits</span><h3>개인 맞춤 코디</h3><p>룩 카드와 스타일 필터를 제공합니다. 현재 화면에는 시연용 코디 콘텐츠가 포함되어 있습니다.</p><a href="https://onfit3.netlify.app/#/outfits">코디 화면 보기 ↗</a></div></article>
+          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/seasonal</span><h3>시즌 코디</h3><p>연령·성별 필터로 룩북을 좁히고 상품 카탈로그, 상세 미리보기, 찜 기능을 이용합니다.</p><a href="https://onfit3.netlify.app/#/seasonal">시즌 코디 보기 ↗</a></div></article>
+          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/wardrobe</span><h3>나의 디지털 옷장</h3><p>카테고리별 아이템 필터와 저장한 시즌 아이템을 관리하는 화면입니다.</p><a href="https://onfit3.netlify.app/#/wardrobe">옷장 화면 보기 ↗</a></div></article>
+          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/compare</span><h3>상품 가격 비교</h3><p>하나의 상품과 여러 판매처의 가격·배송 정보를 비교하는 표 형식 화면입니다. 값은 샘플입니다.</p><a href="https://onfit3.netlify.app/#/compare">비교 화면 보기 ↗</a></div></article>
+          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/price</span><h3>가격 인사이트</h3><p>찜한 상품을 고르고 저장 가격, 날짜, 기록 개수를 차트와 요약 카드로 확인합니다.</p><a href="https://onfit3.netlify.app/#/price">가격 화면 보기 ↗</a></div></article>
+          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/fitting</span><h3>3D 가상 피팅</h3><p>치수·체형 프리셋을 조정하고 아바타에 상의, 하의, 아우터, 모자를 조합합니다.</p><a href="https://onfit3.netlify.app/#/fitting">3D 피팅 보기 ↗</a></div></article>
+          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / AI SEARCH</span><h3>AI 패션 검색</h3><p>사진 업로드·카메라, 아이템 선택, 유사 상품 추천과 가상 착용 순서로 진행합니다.</p><a href="#ai-search">AI 검색 구현 방식 보기 ↗</a></div></article>
+          <article class="screen-card"><div class="screen-image"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=500&q=75" alt="" loading="lazy" /></div><div class="screen-copy"><span class="route">APP / #/admin</span><h3>관리자 데모</h3><p>공개 데모용 가입 현황을 API에서 불러오고, 제한된 가입자 목록과 통계를 표시합니다.</p><a href="https://onfit3.netlify.app/#/admin">관리자 데모 보기 ↗</a></div></article>
         </div>
       </section>
 
@@ -225,7 +224,7 @@
         <div class="architecture">
           <article class="arch-card"><span class="eyebrow">01 · ROUTING</span><h3>Hash 기반 화면 전환</h3><p>메인 앱은 URL hash를 읽어 화면 컴포넌트를 선택합니다. 서버의 별도 라우팅 설정 없이 정적 호스팅에서 각 앱 화면으로 이동할 수 있습니다.</p><code>frontend/src/App.jsx<br />#/style · #/outfits · #/fitting</code></article>
           <article class="arch-card"><span class="eyebrow">02 · SERVICE LAYER</span><h3>UI와 네트워크 분리</h3><p>프로필·인증·찜·이미지 검색 요청을 서비스 모듈에 분리했습니다. 화면은 로딩과 실패 상태를 처리하고, API 응답 형태는 각 서비스 함수가 확인합니다.</p><code>frontend/src/services/<br />ai-fashion/src/services/api.js</code></article>
-          <article class="arch-card"><span class="eyebrow">03 · AI SEARCH</span><h3>이미지 검색 파이프라인</h3><p>선택 영역의 좌표를 segmentation API에 보내고, crop 이미지로 유사 상품을 요청한 뒤 상품 사진과 사용자 이미지를 가상 착용 API에 전달합니다.</p><code>POST /api/circle-search/segment<br />POST /api/circle-search/recommend<br />POST /api/circle-search/try-on</code></article>
+          <article class="arch-card" id="ai-search"><span class="eyebrow">03 · AI SEARCH</span><h3>이미지 검색 파이프라인</h3><p>선택 영역의 좌표를 segmentation API에 보내고, crop 이미지로 유사 상품을 요청한 뒤 상품 사진과 사용자 이미지를 가상 착용 API에 전달합니다.</p><code>POST /api/circle-search/segment<br />POST /api/circle-search/recommend<br />POST /api/circle-search/try-on</code></article>
           <article class="arch-card"><span class="eyebrow">04 · 3D FITTING</span><h3>치수와 의류 모델 조합</h3><p>React Three Fiber 캔버스에 GLB 아바타·의류를 렌더링하고, 사용자가 조정한 신체 치수와 의류 색상·착용 상태를 화면 상태로 반영합니다.</p><code>MannequinCanvas<br />BodyModel · GarmentGlb · InbodyUploadPanel</code></article>
           <article class="arch-card"><span class="eyebrow">05 · BACKEND</span><h3>FastAPI와 데이터 저장</h3><p>FastAPI 라우터가 인증, 프로필, 상품, 가격 및 이미지 검색 요청을 처리합니다. 설정에 따라 MySQL 호환 TiDB 데이터베이스를 사용합니다.</p><code>backend/app/api/<br />backend/routers/circle_search.py</code></article>
           <article class="arch-card"><span class="eyebrow">06 · DEPLOYMENT</span><h3>소개와 앱을 나눠 배포</h3><p>GitHub Actions가 정적 소개 페이지를 루트에, ONFIT과 AI 검색 앱을 하위 경로에 빌드합니다. API는 별도 백엔드 서비스로 배포해야 합니다.</p><code>/semiproject/ · 프로젝트 소개<br />/semiproject/app/ · ONFIT 앱</code></article>
@@ -267,7 +266,7 @@
         <p class="eyebrow">FIND YOUR OWN FIT</p>
         <h2>프로젝트를 살펴봤다면,<br /><em>ONFIT을 직접 만나보세요.</em></h2>
         <p>소개 페이지는 프로젝트 설명, 체험 링크는 실제 ONFIT 프론트엔드로 연결됩니다.</p>
-        <div class="final-actions"><a class="button button-dark" href="app/">ONFIT 앱 열기 ↗</a><a class="button button-line" href="app/ai-fashion/">AI 패션 검색 ↗</a><a class="button button-line" href="https://github.com/lsh-big/semiproject">GitHub 저장소 ↗</a></div>
+        <div class="final-actions"><a class="button button-dark" href="https://onfit3.netlify.app/">ONFIT 앱 열기 ↗</a><a class="button button-line" href="#ai-search">AI 검색 구현 보기 ↗</a><a class="button button-line" href="https://github.com/lsh-big/semiproject">GitHub 저장소 ↗</a></div>
       </section>
     </main>
     <footer>ONFIT · PERSONAL FASHION CURATION · PROJECT DOCUMENTATION</footer>
