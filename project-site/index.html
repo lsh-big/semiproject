@@ -105,12 +105,13 @@
       .contribution{display:grid;grid-template-columns:.75fr 1.25fr;gap:60px;align-items:center;border-top:1px solid var(--line);padding-top:40px}
       .contribution h3{font-size:22px;font-weight:500}
       .contribution p{font-size:12px;line-height:1.9;color:#6f6861;margin:0}
-      .member-portfolio{display:inline-block;margin:0 8px;padding:4px 7px;border:1px solid #d8c6b8;color:#8e624f;font-size:10px;font-weight:600;white-space:nowrap;vertical-align:1px}
+      .member-portfolio{display:inline-block;padding:4px 7px;border:1px solid #d8c6b8;color:#8e624f;font-size:10px;font-weight:600;white-space:nowrap}
       .member-portfolio:hover{background:#efe9e1;text-decoration:underline}
-      .member-row{display:flex;align-items:center;justify-content:space-between;gap:24px}
+      .member-row{display:flex;align-items:center;gap:12px}
       .member-row+.member-row{margin-top:8px}
       .member-identity{flex-shrink:0}
       .member-role{text-align:right}
+      .member-row:first-child .member-role{margin-left:auto}
       .notice{border-left:2px solid #b48770;background:#efe9e1;padding:18px 21px;font-size:11px;color:#696159;line-height:1.8;margin-top:34px}
       .final-cta{background:#ded3c6;text-align:center;padding:85px 24px}
       .final-cta h2{font-size:clamp(35px,5vw,58px);letter-spacing:-.06em;font-weight:500;line-height:1.15;margin:15px 0}
@@ -264,7 +265,7 @@
         <div class="contribution">
           <h3>프로젝트 기여 영역</h3>
           <div class="contribution-members">
-            <p class="member-row"><span class="member-identity"><strong>이승호</strong><a class="member-portfolio" href="https://lsh-big.github.io/portfolio/" target="_blank" rel="noopener noreferrer" aria-label="이승호 개인 포트폴리오 새 탭에서 열기">개인 포트폴리오 ↗</a></span><span class="member-role">가격 흐름 화면과 시연 데이터 시각화</span></p>
+            <p class="member-row"><strong class="member-identity">이승호</strong><span class="member-role">가격 흐름 화면과 시연 데이터 시각화</span><a class="member-portfolio" href="https://lsh-big.github.io/portfolio/" target="_blank" rel="noopener noreferrer" aria-label="이승호 개인 포트폴리오 새 탭에서 열기">개인 포트폴리오 ↗</a></p>
             <p class="member-row"><strong>성승건</strong><span class="member-role">회원·프로필, 개인 맞춤 코디, 인바디, 3D 피팅 및 관련 프론트엔드·백엔드</span></p>
             <p class="member-row"><strong>황상옥</strong><span class="member-role">공통 프론트엔드와 UI</span></p>
             <p class="member-row"><strong>안종범</strong><span class="member-role">상품 크롤링, 동일 상품 매칭, 가격 비교</span></p>
