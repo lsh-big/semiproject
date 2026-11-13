@@ -7,7 +7,7 @@ ONFIT은 체형과 스타일 취향을 바탕으로 패션을 탐색하고, 코�
 <p align="center">
   <a href="https://lsh-big.github.io/semiproject/project-site/"><strong>프로젝트 포트폴리오 보기 ↗</strong></a>
   &nbsp;·&nbsp;
-  <a href="https://onfit3.netlify.app/"><strong>ONFIT 서비스 체험 ↗</strong></a>
+  <a href="https://semiproject.onrender.com/"><strong>ONFIT 서비스 체험 ↗</strong></a>
   &nbsp;·&nbsp;
   <a href="https://github.com/lsh-big/semiproject"><strong>소스 코드 ↗</strong></a>
 </p>
@@ -29,19 +29,19 @@ ONFIT은 체형과 스타일 취향을 바탕으로 패션을 탐색하고, 코�
 | [전체 화면과 제작 과정](https://lsh-big.github.io/semiproject/project-site/)            | 서비스 소개, 주요 기능, 화면 안내, 아키텍처와 배포 방식         |
 | [화면별 포트폴리오](https://lsh-big.github.io/semiproject/project-site/#screens)        | 홈, 스타일 프로필, 코디, 옷장, 가격, 피팅 화면과 각 화면의 목적 |
 | [구현 방식과 기술 구성](https://lsh-big.github.io/semiproject/project-site/#process)    | 사용자 흐름 설계, 공통 UI, API 연결, 이미지 검색 파이프라인     |
-| [ONFIT 앱](https://onfit3.netlify.app/)                                                 | 공개된 프론트엔드 데모                                          |
+| [ONFIT 앱](https://semiproject.onrender.com/)                                                 | 공개된 프론트엔드 데모                                          |
 | [AI 패션 검색 구현 설명](https://lsh-big.github.io/semiproject/project-site/#ai-search) | 이미지 선택부터 segmentation·유사 상품·가상 착용 요청까지     |
 
 ### 화면에서 확인할 수 있는 기능
 
 | 화면                     | 사용자 경험                                      | 데모                                                                                                             |
 | ------------------------ | ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
-| 홈·에디토리얼           | 서비스 소개와 주요 패션 콘텐츠 탐색              | [홈 열기](https://onfit3.netlify.app/#/home)                                                                      |
-| 스타일 프로필            | 스타일·색상·핏 선호 설정                       | [스타일 설정 열기](https://onfit3.netlify.app/#/style)                                                            |
-| 코디·시즌 룩북          | 추천 룩 탐색과 시즌별 필터                       | [코디 열기](https://onfit3.netlify.app/#/outfits) · [시즌 룩북 열기](https://onfit3.netlify.app/#/seasonal)       |
-| 디지털 옷장              | 저장한 아이템과 코디 확인                        | [옷장 열기](https://onfit3.netlify.app/#/wardrobe)                                                                |
-| 가격 비교·인사이트      | 상품별 가격 비교 및 가격 이력 확인               | [가격 비교 열기](https://onfit3.netlify.app/#/compare) · [가격 인사이트 열기](https://onfit3.netlify.app/#/price) |
-| 3D 가상 피팅             | 체형 치수와 의류 조합을 아바타로 미리보기        | [피팅 화면 열기](https://onfit3.netlify.app/#/fitting)                                                            |
+| 홈·에디토리얼           | 서비스 소개와 주요 패션 콘텐츠 탐색              | [홈 열기](https://semiproject.onrender.com/#/home)                                                                      |
+| 스타일 프로필            | 스타일·색상·핏 선호 설정                       | [스타일 설정 열기](https://semiproject.onrender.com/#/style)                                                            |
+| 코디·시즌 룩북          | 추천 룩 탐색과 시즌별 필터                       | [코디 열기](https://semiproject.onrender.com/#/outfits) · [시즌 룩북 열기](https://semiproject.onrender.com/#/seasonal)       |
+| 디지털 옷장              | 저장한 아이템과 코디 확인                        | [옷장 열기](https://semiproject.onrender.com/#/wardrobe)                                                                |
+| 가격 비교·인사이트      | 상품별 가격 비교 및 가격 이력 확인               | [가격 비교 열기](https://semiproject.onrender.com/#/compare) · [가격 인사이트 열기](https://semiproject.onrender.com/#/price) |
+| 3D 가상 피팅             | 체형 치수와 의류 조합을 아바타로 미리보기        | [피팅 화면 열기](https://semiproject.onrender.com/#/fitting)                                                            |
 | 이미지 기반 AI 패션 검색 | 이미지에서 아이템을 선택해 유사 상품을 찾는 흐름 | [구현 설명](https://lsh-big.github.io/semiproject/project-site/#ai-search)                                        |
 
 > 데모의 로그인·저장·가격 데이터·이미지 검색은 백엔드와 외부 연동 설정에 따라 동작 범위가 다를 수 있습니다. 일부 화면은 샘플 데이터를 사용하고, 3D 피팅 모델은 배포된 에셋 구성에 영향을 받습니다.
@@ -160,6 +160,6 @@ if (-not (Test-Path .env)) {
 ## 링크
 
 - **포트폴리오:** [ONFIT 프로젝트 웹사이트](https://lsh-big.github.io/semiproject/project-site/)
-- **서비스 데모:** [ONFIT 열기](https://onfit3.netlify.app/)
+- **서비스 데모:** [ONFIT 열기](https://semiproject.onrender.com/)
 - **소스 코드:** [GitHub 저장소](https://github.com/lsh-big/semiproject)
 - **배포 상태:** [GitHub Actions](https://github.com/lsh-big/semiproject/actions/workflows/github-pages.yml)
