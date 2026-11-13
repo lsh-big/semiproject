@@ -56,3 +56,23 @@ test('invalid guest favorites are reported rather than silently discarded', asyn
   t.after(() => { globalThis.window = originalWindow })
   await assert.rejects(getSeasonalFavorites(), /찜 목록을 읽을 수 없습니다/)
 })
+
+test('signed-in favorites continue to use the server', async (t) => {
+  const originalWindow = globalThis.window
+  const originalFetch = globalThis.fetch
+  const sessionStorage = createStorage()
+  sessionStorage.setItem('onfit:auth-session:v1', JSON.stringify({
+    access_token: 'test-token', expires_at: Date.now() + 60000,
+  }))
+  globalThis.window = { localStorage: createStorage(), sessionStorage }
+  globalThis.fetch = async (url, options) => {
+    assert.ok(url.endsWith('/outfits/favorites'))
+    assert.equal(options.headers.Authorization, 'Bearer test-token')
+    return { ok: true, status: 200, json: async () => [{ id: 'server-favorite' }] }
+  }
+  t.after(() => {
+    globalThis.window = originalWindow
+    globalThis.fetch = originalFetch
+  })
+  assert.deepEqual(await getSeasonalFavorites(), [{ id: 'server-favorite' }])
+})

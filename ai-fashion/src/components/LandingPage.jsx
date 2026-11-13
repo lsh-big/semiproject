@@ -1,6 +1,5 @@
 import React from 'react'
 import BeforeAfterSlider from './BeforeAfterSlider.jsx'
-import { onfitHomeUrl } from '../siteLinks.js'
 import './LandingPage.css'
 
 function LandingIcon({ name }) {
@@ -23,7 +22,7 @@ const steps = [
 export default function LandingPage({ onCamera, onUpload, busy = false, error = '' }) {
   return <div className="landing-page">
     <header className="landing-header">
-      <a href={onfitHomeUrl}>← ONFIT 쇼핑몰</a>
+      <a href="/#/home">← ONFIT 쇼핑몰</a>
       <span>ONFIT</span>
     </header>
     <section className="landing-hero">

@@ -7,9 +7,7 @@
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "build:site": "node ../scripts/build-site.mjs",
-    "build:pages": "node ../scripts/build-site.mjs --pages",
     "check:site": "node ../scripts/build-site.mjs --check",
-    "check:pages": "node ../scripts/build-site.mjs --pages --check",
     "preview": "vite preview --host 0.0.0.0"
   },
   "dependencies": {

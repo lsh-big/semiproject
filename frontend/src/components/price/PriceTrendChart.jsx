@@ -52,7 +52,7 @@ export default function PriceTrendChart({ history = [], currencyCode = 'KRW', de
   })
   const line = points.map(({ x, y }) => `${x},${y}`).join(' ')
 
-  return <div className="trend-chart" role="img" aria-label={`${validHistory.length}개 시점의 가격 추이`}>
+  return <div className="trend-chart" role="img" aria-label={`${validHistory.length}건의 가격 기록 추이`}>
     <div className="chart-grid">
       <span>{formatPrice(maximum, currencyCode)}</span>
       <span>{formatPrice((maximum + minimum) / 2, currencyCode)}</span>

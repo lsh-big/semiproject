@@ -12,7 +12,7 @@ test('example covers one year with thirteen monthly observations', () => {
   assert.equal(history.length, 13)
   assert.deepEqual(localDate(history[0].observedAt), [2025, 11, 12])
   assert.deepEqual(localDate(history.at(-1).observedAt), [2026, 11, 12])
-  assert.ok(new Set(history.map((point) => point.price)).size > 1)
+  assert.equal(new Set(history.map((point) => point.price)).size > 1, true)
   assert.ok(history.every((point) => point.price >= 87 && point.price <= 113))
   assert.equal(history.at(-1).price, 100)
   assert.ok(history.every((point, index) => index === 0 || Date.parse(point.observedAt) > Date.parse(history[index - 1].observedAt)))
@@ -27,20 +27,24 @@ test('month ends and leap days are clamped without skipping months', () => {
   assert.deepEqual(localDate(leap.at(-1).observedAt), [2024, 2, 29])
 })
 
-test('invalid inputs are rejected', () => {
-  assert.throws(() => getDemoPriceHistory(-1, 'coat'), TypeError)
-  assert.throws(() => getDemoPriceHistory(Number.NaN, 'coat'), TypeError)
-  assert.throws(() => getDemoPriceHistory(100, ''), TypeError)
+test('invalid dates are rejected', () => {
   assert.throws(() => getDemoPriceHistory(100, 'coat', new Date('invalid')), TypeError)
 })
 
-test('the final observation uses the saved price, including cents and zero', () => {
+test('example follows the selected price, preserving cents and zero', () => {
   const today = new Date(2026, 10, 12)
-  assert.equal(getDemoPriceHistory(35.75, 'coat', today).at(-1).price, 35.75)
+  const first = getDemoPriceHistory(35.75, 'coat', today)
+  const second = getDemoPriceHistory(120, 'knit', today)
+  assert.equal(first.at(-1).price, 35.75)
+  assert.equal(second.at(-1).price, 120)
+  assert.notDeepEqual(first.map((point) => point.price), second.map((point) => point.price))
   assert.ok(getDemoPriceHistory(0, 'coat', today).every((point) => point.price === 0))
+  assert.throws(() => getDemoPriceHistory(-1, 'coat', today), TypeError)
+  assert.throws(() => getDemoPriceHistory(NaN, 'coat', today), TypeError)
+  assert.throws(() => getDemoPriceHistory(100, '', today), TypeError)
 })
 
-test('patterns vary by product and remain stable across reloads', () => {
+test('patterns vary by product even at the same price and stay stable across reloads', () => {
   const today = new Date(2026, 10, 12)
   const coat = getDemoPriceHistory(100, 'coat', today)
   const knit = getDemoPriceHistory(100, 'knit', today)
