@@ -1,0 +1,51 @@
+name: Deploy ONFIT to EC2
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: onfit-ec2-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: ec2
+    timeout-minutes: 30
+    steps:
+      - name: Check out the selected commit
+        uses: actions/checkout@v4
+
+      - name: Configure SSH
+        env:
+          EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
+          EC2_KNOWN_HOSTS: ${{ secrets.EC2_KNOWN_HOSTS }}
+        run: |
+          set -eu
+          test -n "$EC2_SSH_KEY"
+          test -n "$EC2_KNOWN_HOSTS"
+          umask 077
+          mkdir -p "$RUNNER_TEMP/onfit-ssh"
+          printf '%s\n' "$EC2_SSH_KEY" > "$RUNNER_TEMP/onfit-ssh/key"
+          printf '%s\n' "$EC2_KNOWN_HOSTS" > "$RUNNER_TEMP/onfit-ssh/known_hosts"
+
+      - name: Build and deploy on EC2
+        env:
+          EC2_HOST: ${{ secrets.EC2_HOST }}
+          EC2_USER: ${{ secrets.EC2_USER }}
+        run: |
+          set -euo pipefail
+          [[ "$EC2_HOST" =~ ^[a-zA-Z0-9.-]+$ ]]
+          [[ "$EC2_USER" =~ ^[a-z_][a-z0-9_-]*$ ]]
+          ssh_options=(-i "$RUNNER_TEMP/onfit-ssh/key" -o BatchMode=yes
+            -o StrictHostKeyChecking=yes -o "UserKnownHostsFile=$RUNNER_TEMP/onfit-ssh/known_hosts"
+            -o ConnectTimeout=20)
+          git archive --format=tar "$GITHUB_SHA" |
+            ssh "${ssh_options[@]}" "$EC2_USER@$EC2_HOST" \
+              "docker build -f Dockerfile.ajb -t onfit:$GITHUB_SHA -"
+          ssh "${ssh_options[@]}" "$EC2_USER@$EC2_HOST" \
+            "bash -s -- $GITHUB_SHA" < scripts/deploy-ec2.sh
