@@ -22,16 +22,34 @@ jobs:
 
       - name: Configure SSH
         env:
+          EC2_HOST: ${{ secrets.EC2_HOST }}
           EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
           EC2_KNOWN_HOSTS: ${{ secrets.EC2_KNOWN_HOSTS }}
         run: |
           set -eu
+          [[ "$EC2_HOST" =~ ^[a-zA-Z0-9.-]+$ ]]
           test -n "$EC2_SSH_KEY"
           test -n "$EC2_KNOWN_HOSTS"
           umask 077
           mkdir -p "$RUNNER_TEMP/onfit-ssh"
           printf '%s\n' "$EC2_SSH_KEY" > "$RUNNER_TEMP/onfit-ssh/key"
-          printf '%s\n' "$EC2_KNOWN_HOSTS" > "$RUNNER_TEMP/onfit-ssh/known_hosts"
+          if [[ "$EC2_KNOWN_HOSTS" =~ ^(ssh-|ecdsa-|sk-)[^[:space:]]+[[:space:]] ]]; then
+            printf '%s %s\n' "$EC2_HOST" "$EC2_KNOWN_HOSTS" > "$RUNNER_TEMP/onfit-ssh/known_hosts"
+          else
+            known_host_entry=$(printf '%s\n' "$EC2_KNOWN_HOSTS" | awk -v host="$EC2_HOST" '
+              NR > 1 || NF < 3 || $1 ~ /^@/ || $2 !~ /^(ssh-|ecdsa-|sk-)/ { exit 1 }
+              { $1=host; print }
+              END { if (NR != 1) exit 1 }
+            ') || {
+              echo "EC2_KNOWN_HOSTS must contain one known_hosts entry or a host public key." >&2
+              exit 1
+            }
+            printf '%s\n' "$known_host_entry" > "$RUNNER_TEMP/onfit-ssh/known_hosts"
+          fi
+          ssh-keygen -F "$EC2_HOST" -f "$RUNNER_TEMP/onfit-ssh/known_hosts" >/dev/null || {
+            echo "EC2_KNOWN_HOSTS does not contain a host key for EC2_HOST." >&2
+            exit 1
+          }
 
       - name: Build and deploy on EC2
         env:
